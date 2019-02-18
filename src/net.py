@@ -115,7 +115,7 @@ def train(x_train, y_train, batch_size):
         print("EPOCH {} ...".format(i+1))
         print()
         # save latest model
-        saver.save(sess, 'ckpt/net', global_step=i)
+        saver.save(sess, '../ckpt/net', global_step=i)
 
     print("Model saved")
 
@@ -144,7 +144,7 @@ def test(cifar10_test_images):
 
   with tf.Session() as sess:
       # Load saved model from ckpt folder
-      saver.restore(sess, tf.train.latest_checkpoint('ckpt'))
+      saver.restore(sess, tf.train.latest_checkpoint('../ckpt'))
       # Get the predicted classes of the test images
       yp_test = sess.run(tf.argmax(logits, axis=1), feed_dict={x: cifar10_test_images, isTest: True})
 
