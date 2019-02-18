@@ -1,0 +1,3 @@
+OrderedDict([   ('accuracy', 0.7095),
+                ('run_time', 9.818820964999759),
+                ('correct_predict', 7095)])
